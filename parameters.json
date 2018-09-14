@@ -1,0 +1,57 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "centralus"
+        },
+        "isJoiningExistingNetwork": {
+            "value": false
+        },
+        "regionCount": {
+            "value": 2
+        },
+        "location_1": {
+            "value": "japaneast"
+        },
+        "location_2": {
+            "value": "eastus"
+        },
+        "authType": {
+            "value": "password"
+        },
+        "adminUsername": {
+            "value": "parityadmin"
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "ethereumNetworkID": {
+            "value": 10101010
+        },
+        "consortiumMemberId": {
+            "value": 0
+        },
+        "ethereumAdminPublicKey": {
+            "value": "0xb10d89ce1e7db8ddab04185082957a6482c73276"
+        },
+        "numVLNodesRegion": {
+            "value": 2
+        },
+        "vlNodeVMSize": {
+            "value": "Standard_D1_v2"
+        },
+        "vlStorageAccountType": {
+            "value": "Standard_LRS"
+        },
+        "omsDeploy": {
+            "value": true
+        },
+        "omsLocation": {
+            "value": "eastus"
+        },
+        "deployUsingPublicIP": {
+            "value": true
+        }
+    }
+}
