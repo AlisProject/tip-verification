@@ -256,7 +256,7 @@
         },
         "enableSshAccess": {
             "type": "bool",
-            "defaultValue": false,
+            "defaultValue": true,
             "metadata": {
                 "description": "Enables or Disables the Network Security Group rule to allow SSH port access"
             }
