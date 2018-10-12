@@ -78,6 +78,11 @@ az group deployment show -g alispoa -n alispoadeploy | jq '.properties.outputs'
 
 # Tips
 
+## Validatorノードの主要ファイルのパス
+
+- config.toml: parityの設定ファイル
+  - `/home/parityadmin/config/node.toml`
+
 ## リソースグループの削除
 
 ```bash
