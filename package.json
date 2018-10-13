@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "./deploy.sh -i ${SUBSCRIPTION_ID} -g alispoa -n alispoadeploy -l centralus",
+    "delete": "az group delete -n alispoa",
+    "poa_info": "az group deployment show -g alispoa -n alispoadeploy | jq '.properties.outputs'",
+    "rpc": "az group deployment show -g alispoa -n alispoadeploy | jq -r '.properties.outputs.ethereum_rpc_endpoint.value'",
+    "admin": "az group deployment show -g alispoa -n alispoadeploy | jq '.properties.outputs.admin_site.value' | xargs open",
+    "oms": "az group deployment show -g alispoa -n alispoadeploy | jq '.properties.outputs.oms_portal_url.value' | xargs open",
+    "ssh": "az group deployment show -g alispoa -n alispoadeploy | jq -r '.properties.outputs.ssh_to_first_vl_node_region1.value'"
   },
   "repository": {
     "type": "git",
@@ -21,6 +27,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "truffle": "^4.1.14",
+    "truffle-hdwallet-provider": "^0.0.6",
     "web3": "^1.0.0-beta.36"
   }
 }
