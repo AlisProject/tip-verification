@@ -1,0 +1,2 @@
+# Azure:Ethereum Proof-of-Authority Consortium
+export ETHEREUM_RPC_ENDPOINT=http://xxxxxxxxxx-dns-reg1.japaneast.cloudapp.azure:8540

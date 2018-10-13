@@ -1,0 +1,26 @@
+{
+  "name": "tip-verification",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlisProject/tip-verification.git"
+  },
+  "author": "@sot528",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlisProject/tip-verification/issues"
+  },
+  "homepage": "https://github.com/AlisProject/tip-verification#readme",
+  "dependencies": {
+    "web3": "^1.0.0-beta.36"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-cli": "^6.26.0"
+  }
+}

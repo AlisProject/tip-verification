@@ -1,2 +1,5 @@
 .idea
 tmp*
+.envrc
+
+node_modules
