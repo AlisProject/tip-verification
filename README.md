@@ -29,7 +29,6 @@ az group deployment show -g alispoa -n alispoadeploy | jq '.properties.outputs'
 上記スクリプト実行で以下のような情報が取得できる。
 
 - admin_site: 管理用ページのURL
-- consortium_data_URL:  
 - ethereum_rpc_endpoint: EthereumのRPCリクエストのエンドポイント
 - oms_portal_url: Azure Monitor ポータルのURL。ネットワーク統計情報＆各ノードの情報を監視。
 - ssh_to_first_vl_node_region1: parityノードの一つに接続するためのSSHコマンド
@@ -99,21 +98,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id
 {"jsonrpc":"2.0","result":"0x9fb37","id":1}
 ```
 
-
-# Tips
-
-## Validatorノードの主要ファイルのパス
-
-- config.toml: parityの設定ファイル
-  - `/home/parityadmin/config/node.toml`
-
-## リソースグループの削除
-
-```bash
-az group delete -n alispoa
-```
-
-## web3.jsを利用したプライベートチェーンの利用
+# コントラクトのデプロイを行う
 - 以下のツールが必要
   - [ndenv](https://github.com/riywo/ndenv)
   - [yarn](https://yarnpkg.com/lang/ja/)
@@ -124,16 +109,42 @@ az group delete -n alispoa
 ```bash
 ndenv install
 yarn
+yarn truffle install
 ```
-
 
 環境情報の `ethereum_rpc_endpoint` のURLとポートを、`ETHEREUM_RPC_ENDPOINT`として環境変数へ定義する:
 
 ```bash
+# ethereum_rpc_endpointの表示
+yarn rpc
+
+# 環境変数の定義
 cp -p .envrc.sample .envrc
 direnv edit
 ```
 
+truffleを利用しコントラクトをデプロイ:
+
+```bash
+yarn truffle deploy --network poa
+```
+
+# Tips
+
+## Validatorノードの主要ファイルのパス
+
+- config.toml: parityの設定ファイル
+  - `/home/parityadmin/config/node.toml`
+- parity
+  - `/var/log/parity/parity.log`
+
+## リソースグループの削除
+
+```bash
+az group delete -n alispoa
+```
+
+## web3.jsを利用したプライベートチェーンの利用
 web3.jsを利用したスクリプトを実行。
 
 **最新のブロックナンバーを取得する例:**
@@ -147,3 +158,6 @@ yarn babel-node ./misc/getBlockNumber.js
 ```bash
 654130
 ```
+
+# 備考
+- 検証で利用しているEOAやニーモニックフレーズは本番環境で利用しないでください
