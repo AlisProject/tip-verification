@@ -1,5 +1,11 @@
 .idea
-tmp*
 .envrc
 
+# libraries
 node_modules
+installed_contracts
+
+# generated files
+build
+yarn-error.log
+tmp*

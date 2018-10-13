@@ -16,11 +16,11 @@
     "url": "https://github.com/AlisProject/tip-verification/issues"
   },
   "homepage": "https://github.com/AlisProject/tip-verification#readme",
-  "dependencies": {
-    "web3": "^1.0.0-beta.36"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "babel-cli": "^6.26.0"
+    "truffle": "^4.1.14",
+    "web3": "^1.0.0-beta.36"
   }
 }
