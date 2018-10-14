@@ -6,3 +6,7 @@ export ETHEREUM_RPC_ENDPOINT=http://xxxxxxxxxx-dns-reg1.japaneast.cloudapp.azure
 
 # Your EOA
 export MNEMONIC="physical siege permit top wet rose genuine leisure cool denial toddler nerve"
+
+# MSA Token
+export POA_CHAIN_MSA_TOKEN_ADDRESS=0xef95692d7b2c23181219d2367fdd3187b4b6068b
+export POA_CHAIN_ADMIN_PUBLIC_KEY=`cat parameters.json | jq -r '.parameters.ethereumAdminPublicKey.value'`

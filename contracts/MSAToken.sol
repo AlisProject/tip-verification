@@ -13,4 +13,8 @@ contract MSAToken is MintableToken, BurnableToken {
 
   // same as ether. (1ether=1wei * (10 ** 18))
   uint public constant decimals = 18;
+
+  function MSAToken(address admin_address){
+    mint(admin_address, 100000000000000000000); // 100MSA
+  }
 }
