@@ -104,6 +104,9 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id
   - [yarn](https://yarnpkg.com/lang/ja/)
   - [direnv](https://github.com/direnv/direnv)
 
+ここでは、例として標準的なERC20トークン `MSAToken` のコントラクトをプライベートチェーンへデプロイする。
+- トークンコントラクト: `contract/MSAToken.sol`
+
 必要なリソースのインストール:
 
 ```bash
@@ -127,6 +130,21 @@ truffleを利用しコントラクトをデプロイ:
 
 ```bash
 yarn truffle deploy --network poa
+```
+
+デプロイ時に表示された `MSAToken` のアドレスを環境変数 `POA_CHAIN_MSA_TOKEN_ADDRESS` へ反映しておく。
+
+```bash
+direnv edit
+```
+
+# ERC20トークンの操作
+デプロイが完了していればweb3.jsからERC20トークンの操作が可能。
+
+デフォルトで100MSAが格納される `POA_CHAIN_ADMIN_PUBLIC_KEY` の残高を確認する例:
+
+```bash
+yarn babel-node ./misc/balanceOf.js
 ```
 
 # Tips
