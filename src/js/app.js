@@ -2,11 +2,11 @@ App = {
   web3Provider: null,
   contracts: {},
 
-  init: function() {
+  init: function () {
     return App.initWeb3();
   },
 
-  initWeb3: function() {
+  initWeb3: function () {
     // Initialize web3 and set the provider to the testRPC.
 
     // FIXME:
@@ -24,8 +24,8 @@ App = {
     return App.initContract();
   },
 
-  initContract: function() {
-    $.getJSON('MSAToken.json', function(data) {
+  initContract: function () {
+    $.getJSON('MSAToken.json', function (data) {
       // Get the necessary contract artifact file and instantiate it with truffle-contract.
       var TutorialTokenArtifact = data;
       App.contracts.TutorialToken = TruffleContract(TutorialTokenArtifact);
@@ -40,11 +40,11 @@ App = {
     return App.bindEvents();
   },
 
-  bindEvents: function() {
+  bindEvents: function () {
     $(document).on('click', '#transferButton', App.handleTransfer);
   },
 
-  handleTransfer: function(event) {
+  handleTransfer: function (event) {
     event.preventDefault();
 
     var amount = parseInt($('#TTTransferAmount').val());
@@ -54,31 +54,31 @@ App = {
 
     var tutorialTokenInstance;
 
-    web3.eth.getAccounts(function(error, accounts) {
+    web3.eth.getAccounts(function (error, accounts) {
       if (error) {
         console.log(error);
       }
 
       var account = accounts[0];
 
-      App.contracts.TutorialToken.deployed().then(function(instance) {
+      App.contracts.TutorialToken.deployed().then(function (instance) {
         tutorialTokenInstance = instance;
-        return tutorialTokenInstance.transfer(toAddress, amount, {from: account, gasPrice: 0});
-      }).then(function(result) {
+        return tutorialTokenInstance.transfer(toAddress, amount, { from: account, gasPrice: 0 });
+      }).then(function (result) {
         alert('Transfer Successful!');
         return App.getBalances();
-      }).catch(function(err) {
+      }).catch(function (err) {
         console.log(err.message);
       });
     });
   },
 
-  getBalances: function() {
+  getBalances: function () {
     console.log('Getting balances...');
 
     var tutorialTokenInstance;
 
-    web3.eth.getAccounts(function(error, accounts) {
+    web3.eth.getAccounts(function (error, accounts) {
       if (error) {
         console.log(error);
       }
@@ -86,28 +86,28 @@ App = {
       console.log(accounts);
       var account = accounts[0];
 
-      App.contracts.TutorialToken.deployed().then(function(instance) {
+      App.contracts.TutorialToken.deployed().then(function (instance) {
         tutorialTokenInstance = instance;
 
         return tutorialTokenInstance.balanceOf(account);
-      }).then(function(result) {
+      }).then(function (result) {
         balance = result.c[0];
 
         $('#TTBalance').text(balance);
-      }).catch(function(err) {
+      }).catch(function (err) {
         console.log(err.message);
       });
 
-      App.contracts.TutorialToken.deployed().then(function(instance) {
+      App.contracts.TutorialToken.deployed().then(function (instance) {
         tutorialTokenInstance = instance;
 
         // FIXME:
         return tutorialTokenInstance.balanceOf('0x9876e3e8255D1D85d960CB5fA27F004e76cC3207');
-      }).then(function(result) {
+      }).then(function (result) {
         balance = result.c[0];
 
         $('#receiverBalance').text(balance);
-      }).catch(function(err) {
+      }).catch(function (err) {
         console.log(err.message);
       });
     });
@@ -115,8 +115,8 @@ App = {
 
 };
 
-$(function() {
-  $(window).load(function() {
+$(function () {
+  $(window).load(function () {
     App.init();
   });
 });

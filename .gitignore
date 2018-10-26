@@ -3,6 +3,7 @@
 
 # libraries
 node_modules
+!src/node_modules
 installed_contracts
 
 # generated files

@@ -5,6 +5,7 @@ export SUBSCRIPTION_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx
 export ETHEREUM_RPC_ENDPOINT=http://xxxxxxxxxx-dns-reg1.japaneast.cloudapp.azure:8540
 
 # Your EOA
+# ***** DON'T USE IT FOR PRODUCTION *****
 export MNEMONIC="physical siege permit top wet rose genuine leisure cool denial toddler nerve"
 
 # MSA Token
