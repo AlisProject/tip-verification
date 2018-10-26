@@ -9,8 +9,8 @@ App = {
   initWeb3: function() {
     // Initialize web3 and set the provider to the testRPC.
 
-    // TODO:
-    const rpc_endpoint = 'http://ethmegghq-dns-reg1.japaneast.cloudapp.azure.com:8540';
+    // FIXME:
+    const rpc_endpoint = "http://example.com";
 
     if (typeof web3 !== 'undefined') {
       App.web3Provider = web3.currentProvider;
@@ -101,7 +101,7 @@ App = {
       App.contracts.TutorialToken.deployed().then(function(instance) {
         tutorialTokenInstance = instance;
 
-        // TODO:
+        // FIXME:
         return tutorialTokenInstance.balanceOf('0x9876e3e8255D1D85d960CB5fA27F004e76cC3207');
       }).then(function(result) {
         balance = result.c[0];

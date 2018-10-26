@@ -12,7 +12,8 @@
     "oms": "az group deployment show -g alispoa -n alispoadeploy | jq '.properties.outputs.oms_portal_url.value' | xargs open",
     "ssh": "az group deployment show -g alispoa -n alispoadeploy | jq -r '.properties.outputs.ssh_to_first_vl_node_region1.value'",
     "td": "yarn truffle deploy --network poa",
-    "dev": "lite-server"
+    "fix-app-js": "sed -i '' 's@const rpc_endpoint = .*@const rpc_endpoint = \"'$ETHEREUM_RPC_ENDPOINT'\";@' ./src/js/app.js",
+    "dev": "yarn run fix-app-js && lite-server"
   },
   "repository": {
     "type": "git",
