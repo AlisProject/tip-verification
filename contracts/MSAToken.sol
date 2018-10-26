@@ -11,10 +11,9 @@ contract MSAToken is MintableToken, BurnableToken {
 
   string public constant symbol = 'MSA';
 
-  // same as ether. (1ether=1wei * (10 ** 18))
-  uint public constant decimals = 18;
+  uint public constant decimals = 0;
 
   function MSAToken(address admin_address){
-    mint(admin_address, 100000000000000000000); // 100MSA
+    mint(admin_address, 100); // 100MSA
   }
 }
