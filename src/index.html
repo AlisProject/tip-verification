@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MSAトークン - Wallet</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2 logo-container">
+            <img src="image/logo.png" alt="ALIS and MS" class="logo">
+            <hr/>
+            <br/>
+        </div>
+    </div>
+
+    <div id="petsRow" class="row">
+        <div class="col-sm-6 col-sm-push-3 col-md-4 col-md-push-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">ウォレット</h3>
+                </div>
+                <div class="panel-body">
+                    <strong>トークン残高</strong>: <span id="TTBalance"></span> MSA<br/><br/>
+                    <input type="hidden" class="form-control" id="TTTransferAddress"
+                           value="0x9876e3e8255D1D85d960CB5fA27F004e76cC3207"/>
+                    <input type="text" class="form-control" id="TTTransferAmount" placeholder="贈る量を選択.."/>
+                    <button class="btn btn-primary" id="transferButton" type="button">トークンを贈る</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="receiverRow" class="row">
+        <div class="col-sm-6 col-sm-push-3 col-md-4 col-md-push-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">贈り先</h3>
+                </div>
+                <div class="panel-body">
+                    <strong>トークン残高</strong>: <span id="receiverBalance"></span> MSA<br/><br/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./node_modules/web3/src/index.js"></script>
+<script src="./node_modules/truffle-contract/dist/truffle-contract.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

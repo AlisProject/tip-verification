@@ -1,0 +1,13 @@
+.logo-container {
+    text-align: center;
+}
+
+.logo {
+    width: 81%;
+    margin-top: 14px;
+}
+
+.panel-body .btn {
+    width: 100%;
+    margin-top: 9px;
+}
