@@ -1,3 +1,7 @@
+[![ALIS](./src/image/logo.png)](https://prtimes.jp/main/html/rd/p/000000005.000027792.html)  
+
+マイクロソフト社との[投げ銭API開発のための協業](https://prtimes.jp/main/html/rd/p/000000005.000027792.html)に関連するリソースを管理するリポジトリ。
+
 # 必須環境
 - [Azure CLI](https://docs.microsoft.com/ja-jp/cli/azure/install-azure-cli?view=azure-cli-latest)
   
