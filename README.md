@@ -1,4 +1,9 @@
+[![ALIS](./src/image/logo.png)](https://prtimes.jp/main/html/rd/p/000000005.000027792.html)  
+
+マイクロソフト社との[投げ銭API開発のための協業](https://prtimes.jp/main/html/rd/p/000000005.000027792.html)に関連するリソースを管理するリポジトリ。
+
 # 必須環境
+- [Microsoft Azure](https://azure.microsoft.com/ja-jp/)のアカウント
 - [Azure CLI](https://docs.microsoft.com/ja-jp/cli/azure/install-azure-cli?view=azure-cli-latest)
   
 # 事前準備
@@ -146,6 +151,41 @@ direnv edit
 ```bash
 yarn babel-node ./misc/balanceOf.js
 ```
+
+# UIによる操作
+ERC20トークンを、[MetaMask](https://metamask.io/)を用いて投げ銭を行うまでの手順を記載する。
+
+## 準備
+- 使用するブラウザにMetaMaskをインストール
+
+## フロントエンドの立ち上げ
+
+```bash
+yarn dev
+```
+
+## MetaMaskのアカウントをインポート
+`.envrc` にて定義した `MNEMONIC` を用いて検証用アカウントをインポート。
+
+
+## MetaMaskのネットワーク設定
+MetaMaskのネットワークをAzure上に構築したチェーンへ向ける。  
+RPCエンドポイントの情報が必要。
+
+```bash
+yarn rpc
+```
+
+ここまでの設定で、ブラウザのUIに **トークン残高: 100 MSA** と表示される。
+
+## 投げ銭を実施
+
+1. 投げ銭を行うトークンの量を入力
+1. **トークンを贈る** を押下
+1. MetaMaskの確認画面がポップアップするので **確認** を押下 
+
+
+- ※贈り先は検証なのでスクリプト内にリテラルとして保持されている。
 
 # Tips
 
